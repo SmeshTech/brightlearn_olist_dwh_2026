@@ -1,0 +1,46 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="skiGC0_A5qH_uHguYEDj">
+    <mxGraphModel dx="1493" dy="2007" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nB-5uqR8q2JBCpk0UyIr-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=light-dark(#FFFFFF,#333333);labelBorderColor=none;" value="FACT SALES&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;gold.FactSales&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;SalesKey (PK)&lt;/div&gt;&lt;div&gt;OrderID&lt;/div&gt;&lt;div&gt;OrderItemID&lt;/div&gt;&lt;div&gt;CustomerKey (FK)&lt;/div&gt;&lt;div&gt;ProductKey (FK)&lt;/div&gt;&lt;div&gt;SellerKey (FK)&lt;/div&gt;&lt;div&gt;DateKey (FK)&lt;/div&gt;&lt;div&gt;ItemPrice&lt;/div&gt;&lt;div&gt;FreightValue&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Grain: One row per order item&lt;/div&gt;" vertex="1">
+          <mxGeometry height="290" width="190" x="360" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="nB-5uqR8q2JBCpk0UyIr-6" edge="1" parent="1" source="nB-5uqR8q2JBCpk0UyIr-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.015;entryY=0.465;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="nB-5uqR8q2JBCpk0UyIr-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nB-5uqR8q2JBCpk0UyIr-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=light-dark(#FFFFFF,#666666);" value="DIM CUSTOMER&lt;div&gt;gold.DimCustomer&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;CustomerKey (PK)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Customer history&lt;/div&gt;&lt;div&gt;SCD Type 2&lt;/div&gt;" vertex="1">
+          <mxGeometry height="200" width="200" x="30" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="nB-5uqR8q2JBCpk0UyIr-7" edge="1" parent="1" source="nB-5uqR8q2JBCpk0UyIr-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="nB-5uqR8q2JBCpk0UyIr-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nB-5uqR8q2JBCpk0UyIr-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=light-dark(#FFFFFF,#666666);" value="DIM PRODUCT&lt;br&gt;&lt;div&gt;gold.DimProduct&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;ProductKey (PK)&lt;/div&gt;&lt;div&gt;ProductID&lt;/div&gt;&lt;div&gt;ProductCategoryName&lt;/div&gt;&lt;div&gt;ProductWeightG&lt;/div&gt;&lt;div&gt;ProductLengthCm&lt;/div&gt;&lt;div&gt;ProductHeightCm&lt;/div&gt;&lt;div&gt;ProductWidthCm&lt;/div&gt;" vertex="1">
+          <mxGeometry height="190" width="190" x="360" y="-80" as="geometry" />
+        </mxCell>
+        <mxCell id="nB-5uqR8q2JBCpk0UyIr-11" edge="1" parent="1" source="nB-5uqR8q2JBCpk0UyIr-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="nB-5uqR8q2JBCpk0UyIr-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nB-5uqR8q2JBCpk0UyIr-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=light-dark(#FFFFFF,#666666);" value="DIM DATE&lt;br&gt;&lt;div&gt;gold.DimDate&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;DateKey (PK)&lt;/div&gt;&lt;div&gt;FullDate&lt;/div&gt;&lt;div&gt;YearNumber&lt;/div&gt;&lt;div&gt;QuarterNumber&lt;/div&gt;&lt;div&gt;Month&lt;/div&gt;&lt;div&gt;MonthNameNumber&lt;/div&gt;&lt;div&gt;DayOfMonth&lt;/div&gt;&lt;div&gt;DayName&lt;/div&gt;&lt;div&gt;IsWeekend&lt;/div&gt;" vertex="1">
+          <mxGeometry height="240" width="190" x="360" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="nB-5uqR8q2JBCpk0UyIr-10" edge="1" parent="1" source="nB-5uqR8q2JBCpk0UyIr-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.999;entryY=0.468;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="nB-5uqR8q2JBCpk0UyIr-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nB-5uqR8q2JBCpk0UyIr-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=light-dark(#FFFFFF,#666666);" value="DIM SELLER&lt;br&gt;&lt;div&gt;gold.DimSeller&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;SellerKey (PK)&lt;/div&gt;&lt;div&gt;SellerID&lt;/div&gt;&lt;div&gt;SellerCity&lt;/div&gt;&lt;div&gt;Seller State&lt;/div&gt;" vertex="1">
+          <mxGeometry height="190" width="190" x="630" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="nB-5uqR8q2JBCpk0UyIr-13" edge="1" parent="1" source="nB-5uqR8q2JBCpk0UyIr-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="nB-5uqR8q2JBCpk0UyIr-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nB-5uqR8q2JBCpk0UyIr-14" edge="1" parent="1" source="nB-5uqR8q2JBCpk0UyIr-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.576;entryY=0.988;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="nB-5uqR8q2JBCpk0UyIr-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nB-5uqR8q2JBCpk0UyIr-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=light-dark(#FFFFFF,#333333);" value="FACT PAYMENTS&lt;div&gt;gold.FactPayments&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;PaymentKey (PK)&lt;/div&gt;&lt;div&gt;OrderID&lt;/div&gt;&lt;div&gt;PaymentSequential&lt;/div&gt;&lt;div&gt;CustomerKey (FK)&lt;/div&gt;&lt;div&gt;DateKey (FK)&lt;/div&gt;&lt;div&gt;PaymentType&lt;/div&gt;&lt;div&gt;PaymentInstallments&lt;/div&gt;&lt;div&gt;PaymentValue&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Grain: One row per order payment sequence&lt;/div&gt;" vertex="1">
+          <mxGeometry height="240" width="210" x="40" y="550" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

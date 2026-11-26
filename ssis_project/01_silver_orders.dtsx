@@ -1,0 +1,1133 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/4/2026 9:32:43 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-C235VNL"
+  DTS:CreatorName="DESKTOP-C235VNL\USER"
+  DTS:DTSID="{DA078CB5-3DC7-4286-B703-4B9A6E656E95}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="01_silver_orders"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{F69D7A65-39F1-4D72-841C-BC7D3AAE7857}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\load_silver_orders"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{A0868972-3E02-41B9-A1D8-CF0BF8B1EE48}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="load_silver_orders"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\load_silver_orders\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\load_silver_orders\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\load_silver_orders\Data Conversion.Inputs[Data Conversion Input].Columns[order_purchase_timestamp_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="order_purchase_timestamp_clean"
+                      lineageId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[order_purchase_timestamp_clean]" />
+                    <inputColumn
+                      refId="Package\load_silver_orders\Data Conversion.Inputs[Data Conversion Input].Columns[approved_at_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="approved_at_clean"
+                      lineageId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[approved_at_clean]" />
+                    <inputColumn
+                      refId="Package\load_silver_orders\Data Conversion.Inputs[Data Conversion Input].Columns[carrier_date_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="carrier_date_clean"
+                      lineageId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[carrier_date_clean]" />
+                    <inputColumn
+                      refId="Package\load_silver_orders\Data Conversion.Inputs[Data Conversion Input].Columns[customer_delivery_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="customer_delivery_clean"
+                      lineageId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[customer_delivery_clean]" />
+                    <inputColumn
+                      refId="Package\load_silver_orders\Data Conversion.Inputs[Data Conversion Input].Columns[estimated_delivery_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="estimated_delivery_clean"
+                      lineageId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[estimated_delivery_clean]" />
+                    <inputColumn
+                      refId="Package\load_silver_orders\Data Conversion.Inputs[Data Conversion Input].Columns[order_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="order_id"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_id]" />
+                    <inputColumn
+                      refId="Package\load_silver_orders\Data Conversion.Inputs[Data Conversion Input].Columns[customer_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="customer_id"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]" />
+                    <inputColumn
+                      refId="Package\load_silver_orders\Data Conversion.Inputs[Data Conversion Input].Columns[order_status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="order_status"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_status]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\load_silver_orders\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_purchase_timestamp_clean]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_purchase_timestamp_clean]"
+                      name="Copy of order_purchase_timestamp_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[order_purchase_timestamp_clean]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of approved_at_clean]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of approved_at_clean]"
+                      name="Copy of approved_at_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[approved_at_clean]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of carrier_date_clean]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of carrier_date_clean]"
+                      name="Copy of carrier_date_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[carrier_date_clean]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of customer_delivery_clean]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of customer_delivery_clean]"
+                      name="Copy of customer_delivery_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[customer_delivery_clean]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of estimated_delivery_clean]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of estimated_delivery_clean]"
+                      name="Copy of estimated_delivery_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[estimated_delivery_clean]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[order_id_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[order_id_unicode]"
+                      name="order_id_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[customer_id_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[customer_id_unicode]"
+                      name="customer_id_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[order_status_unicode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[order_status_unicode]"
+                      name="order_status_unicode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_status]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\load_silver_orders\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\load_silver_orders\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\load_silver_orders\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\load_silver_orders\Derived Column.Inputs[Derived Column Input].Columns[order_purchase_timestamp]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="order_purchase_timestamp"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_purchase_timestamp]" />
+                    <inputColumn
+                      refId="Package\load_silver_orders\Derived Column.Inputs[Derived Column Input].Columns[order_approved_at]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="order_approved_at"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_approved_at]" />
+                    <inputColumn
+                      refId="Package\load_silver_orders\Derived Column.Inputs[Derived Column Input].Columns[order_delivered_carrier_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="order_delivered_carrier_date"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_delivered_carrier_date]" />
+                    <inputColumn
+                      refId="Package\load_silver_orders\Derived Column.Inputs[Derived Column Input].Columns[order_delivered_customer_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="order_delivered_customer_date"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_delivered_customer_date]" />
+                    <inputColumn
+                      refId="Package\load_silver_orders\Derived Column.Inputs[Derived Column Input].Columns[order_estimated_delivery_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="order_estimated_delivery_date"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_estimated_delivery_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\load_silver_orders\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[order_purchase_timestamp_clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[order_purchase_timestamp_clean]"
+                      name="order_purchase_timestamp_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_purchase_timestamp]}) == "" ? NULL(DT_WSTR,50) : #{Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_purchase_timestamp]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(order_purchase_timestamp) == "" ? NULL(DT_WSTR,50) : order_purchase_timestamp</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[approved_at_clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[approved_at_clean]"
+                      name="approved_at_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_approved_at]}) == "" ? NULL(DT_WSTR,50) : #{Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_approved_at]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(order_approved_at) == "" ? NULL(DT_WSTR,50) : order_approved_at</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[carrier_date_clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[carrier_date_clean]"
+                      name="carrier_date_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_delivered_carrier_date]}) == "" ? NULL(DT_WSTR,50) : #{Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_delivered_carrier_date]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(order_delivered_carrier_date) == "" ? NULL(DT_WSTR,50) : order_delivered_carrier_date</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[customer_delivery_clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[customer_delivery_clean]"
+                      name="customer_delivery_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_delivered_customer_date]}) == "" ? NULL(DT_WSTR,50) : #{Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_delivered_customer_date]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(order_delivered_customer_date) == "" ? NULL(DT_WSTR,50) : order_delivered_customer_date</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[estimated_delivery_clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Output].Columns[estimated_delivery_clean]"
+                      name="estimated_delivery_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_estimated_delivery_date]}) == "" ? NULL(DT_WSTR,50) : #{Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_estimated_delivery_date]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(order_estimated_delivery_date) == "" ? NULL(DT_WSTR,50) : order_estimated_delivery_date</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\load_silver_orders\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\load_silver_orders\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[silver].[olist_orders]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\load_silver_orders\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{E6DDDC92-6659-44E0-9880-DD3BE83F9E0B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-C235VNL]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of order_purchase_timestamp_clean]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of order_purchase_timestamp_clean"
+                      externalMetadataColumnId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_purchase_timestamp]"
+                      lineageId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of order_purchase_timestamp_clean]" />
+                    <inputColumn
+                      refId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of approved_at_clean]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of approved_at_clean"
+                      externalMetadataColumnId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_approved_at]"
+                      lineageId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of approved_at_clean]" />
+                    <inputColumn
+                      refId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of carrier_date_clean]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of carrier_date_clean"
+                      externalMetadataColumnId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_delivered_carrier_date]"
+                      lineageId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of carrier_date_clean]" />
+                    <inputColumn
+                      refId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of customer_delivery_clean]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of customer_delivery_clean"
+                      externalMetadataColumnId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_delivered_customer_date]"
+                      lineageId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of customer_delivery_clean]" />
+                    <inputColumn
+                      refId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of estimated_delivery_clean]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Copy of estimated_delivery_clean"
+                      externalMetadataColumnId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_estimated_delivery_date]"
+                      lineageId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of estimated_delivery_clean]" />
+                    <inputColumn
+                      refId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[order_id_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="order_id_unicode"
+                      externalMetadataColumnId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      lineageId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[order_id_unicode]" />
+                    <inputColumn
+                      refId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[customer_id_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="customer_id_unicode"
+                      externalMetadataColumnId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      lineageId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[customer_id_unicode]" />
+                    <inputColumn
+                      refId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[order_status_unicode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="order_status_unicode"
+                      externalMetadataColumnId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_status]"
+                      lineageId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output].Columns[order_status_unicode]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      dataType="wstr"
+                      length="100"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
+                      dataType="wstr"
+                      length="100"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_status]"
+                      dataType="wstr"
+                      length="50"
+                      name="order_status" />
+                    <externalMetadataColumn
+                      refId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_purchase_timestamp]"
+                      dataType="wstr"
+                      length="19"
+                      name="order_purchase_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_approved_at]"
+                      dataType="wstr"
+                      length="19"
+                      name="order_approved_at" />
+                    <externalMetadataColumn
+                      refId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_delivered_carrier_date]"
+                      dataType="wstr"
+                      length="19"
+                      name="order_delivered_carrier_date" />
+                    <externalMetadataColumn
+                      refId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_delivered_customer_date]"
+                      dataType="wstr"
+                      length="19"
+                      name="order_delivered_customer_date" />
+                    <externalMetadataColumn
+                      refId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_estimated_delivery_date]"
+                      dataType="wstr"
+                      length="19"
+                      name="order_estimated_delivery_date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\load_silver_orders\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load_silver_orders\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load_silver_orders\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\load_silver_orders\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[bronze].[olist_orders]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\load_silver_orders\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{E6DDDC92-6659-44E0-9880-DD3BE83F9E0B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-C235VNL]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_id]"
+                      length="100"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_id]"
+                      name="order_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      length="100"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_id]"
+                      name="customer_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_status]"
+                      length="50"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_status]"
+                      name="order_status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_purchase_timestamp]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_purchase_timestamp]"
+                      length="50"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_purchase_timestamp]"
+                      name="order_purchase_timestamp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_approved_at]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_approved_at]"
+                      length="50"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_approved_at]"
+                      name="order_approved_at"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_delivered_carrier_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_delivered_carrier_date]"
+                      length="50"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_delivered_carrier_date]"
+                      name="order_delivered_carrier_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_delivered_customer_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_delivered_customer_date]"
+                      length="50"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_delivered_customer_date]"
+                      name="order_delivered_customer_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_estimated_delivery_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_estimated_delivery_date]"
+                      length="50"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_estimated_delivery_date]"
+                      name="order_estimated_delivery_date"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="customer_id" />
+                    <externalMetadataColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="order_status" />
+                    <externalMetadataColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_purchase_timestamp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="order_purchase_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_approved_at]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="order_approved_at" />
+                    <externalMetadataColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_delivered_carrier_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="order_delivered_carrier_date" />
+                    <externalMetadataColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_delivered_customer_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="order_delivered_customer_date" />
+                    <externalMetadataColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_estimated_delivery_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="order_estimated_delivery_date" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_id]"
+                      name="order_id" />
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_id]"
+                      name="customer_id" />
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_status]"
+                      name="order_status" />
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_purchase_timestamp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_purchase_timestamp]"
+                      name="order_purchase_timestamp" />
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_approved_at]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_approved_at]"
+                      name="order_approved_at" />
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_delivered_carrier_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_delivered_carrier_date]"
+                      name="order_delivered_carrier_date" />
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_delivered_customer_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_delivered_customer_date]"
+                      name="order_delivered_customer_date" />
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_estimated_delivery_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_estimated_delivery_date]"
+                      name="order_estimated_delivery_date" />
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\load_silver_orders.Paths[Data Conversion Output]"
+              endId="Package\load_silver_orders\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\load_silver_orders\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\load_silver_orders.Paths[Derived Column Output]"
+              endId="Package\load_silver_orders\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\load_silver_orders\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\load_silver_orders.Paths[OLE DB Source Output]"
+              endId="Package\load_silver_orders\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\load_silver_orders\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\load_silver_orders"
+          TopLeft="219.166654691928,45.0666663532787" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\load_silver_orders">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\load_silver_orders\Derived Column"
+          TopLeft="200.833322360285,149.933332290716" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\load_silver_orders\OLE DB Destination"
+          TopLeft="204.166655511492,320.666664436791" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\load_silver_orders\Data Conversion"
+          TopLeft="205.833322087096,237.466665015353" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\load_silver_orders\OLE DB Source"
+          TopLeft="204.999988799294,62.3999995660781" />
+        <EdgeLayout
+          Id="Package\load_silver_orders.Paths[Derived Column Output]"
+          TopLeft="280.533322223691,191.533332290716">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.933332724637"
+              Start="0,0"
+              End="0,38.433332724637">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.433332724637" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load_silver_orders.Paths[Data Conversion Output]"
+          TopLeft="286.799988799294,279.066665015353">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.5999994214378"
+              Start="0,0"
+              End="0,34.0999994214378">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.0999994214378" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load_silver_orders.Paths[OLE DB Source Output]"
+          TopLeft="279.116655579789,103.999999566078">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.9333327246375"
+              Start="0,0"
+              End="0,38.4333327246375">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.4333327246375" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\load_silver_orders\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\load_silver_orders\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

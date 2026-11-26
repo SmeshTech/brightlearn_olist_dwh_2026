@@ -1,0 +1,34 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="JHWGTk5PNcQrI3oFV36y">
+    <mxGraphModel dx="1241" dy="754" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ODVUMog_yajdymivcKGg-5" edge="1" parent="1" source="ODVUMog_yajdymivcKGg-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="ODVUMog_yajdymivcKGg-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ODVUMog_yajdymivcKGg-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=light-dark(#FFFFFF,#006666);" value="SSIS MASTER PACKAGE&lt;div&gt;00_master.dtsx&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Controls Bronze &amp;gt; Silver &amp;gt; Gold&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="200" x="110" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ODVUMog_yajdymivcKGg-6" edge="1" parent="1" source="ODVUMog_yajdymivcKGg-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="ODVUMog_yajdymivcKGg-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ODVUMog_yajdymivcKGg-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=light-dark(#CD7F32,#9A7D0A);" value="BRONZE - ALL TABLES&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Check Bronze Layer&lt;/div&gt;&lt;div&gt;9 Bronze Loading Packages&lt;/div&gt;&lt;div&gt;Skip loading when data is complete&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="200" x="110" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="ODVUMog_yajdymivcKGg-7" edge="1" parent="1" source="ODVUMog_yajdymivcKGg-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="ODVUMog_yajdymivcKGg-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ODVUMog_yajdymivcKGg-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=light-dark(#808080,#808080);" value="SILVER - ALL TABLES&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Check Silver Layer&lt;/div&gt;&lt;div&gt;9 Silver transformation packages&lt;/div&gt;&lt;div&gt;Skip loading when data is complete&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="200" x="110" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="ODVUMog_yajdymivcKGg-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=light-dark(#D4AF37,#5F4F18);" value="GOLD - ALL TABLES&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Load and validate Gold Layer&lt;/div&gt;&lt;div&gt;SQL transformation and validation&lt;/div&gt;&lt;div&gt;6 Gold tables&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="200" x="110" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="ODVUMog_yajdymivcKGg-9" parent="1" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontColor=#1A2733;fontFamily=Helvetica;fontStyle=0" value="&lt;div&gt;PIPELINE SAFETY CHECKS&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;• Bronze and Silver row-count validation&lt;/div&gt;&lt;div&gt;• Skip loading when expected counts match&lt;/div&gt;&lt;div&gt;• Stop when unexpected counts are detected&lt;/div&gt;&lt;div&gt;• Gold SQL loading and validation&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Verified: Successful rerun without row-count changes&lt;/div&gt;&lt;div&gt;Not yet verified: Automatic recovery of missing data&lt;/div&gt;" vertex="1">
+          <mxGeometry height="190" width="400" x="380" y="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

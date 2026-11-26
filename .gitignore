@@ -1,0 +1,36 @@
+# Keep raw data out of GitHub
+/data/
+*.csv
+
+# Visual Studio temporary files
+.vs/
+bin/
+obj/
+*.suo
+*.user
+*.log
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Visual Studio temporary files
+.vs/
+**/bin/
+**/obj/
+
+# User-specific Visual Studio settings
+*.dtproj.user
+*.suo
+
+# Generated SSIS deployment files
+*.ispac
+
+# SQL Server database and backup files
+*.bak
+*.mdf
+*.ldf
+
+# Windows temporary files
+Thumbs.db

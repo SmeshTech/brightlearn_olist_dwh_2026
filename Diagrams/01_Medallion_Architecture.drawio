@@ -1,0 +1,37 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="yPHS5Eeq0O3Tq9OS2zS3">
+    <mxGraphModel dx="1030" dy="626" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="GAaqqGtFSKXYgidSPhcn-6" edge="1" parent="1" source="GAaqqGtFSKXYgidSPhcn-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="GAaqqGtFSKXYgidSPhcn-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GAaqqGtFSKXYgidSPhcn-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#CD7F32;fontColor=#000000;strokeColor=light-dark(#BD7000, #000000);fontFamily=Times New Roman;labelBorderColor=default;fontSize=17;textShadow=0;spacingLeft=0;spacingTop=0;" value="BRONZE LAYER&lt;div&gt;Olist_Staging.bronze&lt;/div&gt;&lt;div&gt;9 raw Olist datasets&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="230" x="40" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="GAaqqGtFSKXYgidSPhcn-7" edge="1" parent="1" source="GAaqqGtFSKXYgidSPhcn-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="GAaqqGtFSKXYgidSPhcn-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GAaqqGtFSKXYgidSPhcn-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#C0C0C0;fontColor=#1F2937;strokeColor=none;fontFamily=Times New Roman;labelBorderColor=#707070;fontSize=17;textShadow=0;spacingLeft=0;spacingTop=0;" value="SILVER LAYER&lt;div&gt;Olist_Staging.silver&lt;/div&gt;&lt;div&gt;9 cleaned Olist datasets&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="230" x="300" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="GAaqqGtFSKXYgidSPhcn-11" edge="1" parent="1" source="GAaqqGtFSKXYgidSPhcn-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="GAaqqGtFSKXYgidSPhcn-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GAaqqGtFSKXYgidSPhcn-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#D4AF37;fontColor=#1F2937;strokeColor=none;fontFamily=Times New Roman;labelBorderColor=#4D4D4D;fontSize=17;textShadow=0;spacingLeft=0;spacingTop=0;verticalAlign=middle;" value="GOLD LAYER&lt;div&gt;Olist_DWH.gold&lt;/div&gt;&lt;div&gt;4 dimensions&amp;nbsp;&lt;br&gt;+ 2 facts&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="230" x="560" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="GAaqqGtFSKXYgidSPhcn-9" edge="1" parent="1" source="GAaqqGtFSKXYgidSPhcn-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;labelPadding=0 4;" target="GAaqqGtFSKXYgidSPhcn-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GAaqqGtFSKXYgidSPhcn-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#E1D5E7;fontColor=#000000;strokeColor=light-dark(#BD7000, #000000);fontFamily=Times New Roman;labelBorderColor=default;fontSize=17;textShadow=0;spacingLeft=0;spacingTop=0;" value="OLIST CSV FILE&lt;div&gt;9 source datasets&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="230" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GAaqqGtFSKXYgidSPhcn-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fillColor=#A7B395;fontColor=#000000;strokeColor=none;fontFamily=Times New Roman;labelBorderColor=#333333;fontSize=17;textShadow=0;spacingLeft=0;spacingTop=0;verticalAlign=middle;" value="BUSINESS ANALYTICS" vertex="1">
+          <mxGeometry height="160" width="230" x="560" y="440" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
